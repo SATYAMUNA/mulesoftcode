@@ -1,11 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Unit Test') { 
-      steps {
-        sh 'mvn clean test'
-      }
-    }
+      	stage('Checkout') {
+            steps {
+		checkout scm
+
+            }
+        }
     stage('Deploy Standalone') { 
       steps {
         sh 'mvn deploy -P standalone'
