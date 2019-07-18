@@ -9,7 +9,7 @@ pipeline {
         }
     stage('Deploy Standalone') { 
       steps {
-        cmd 'mvn deploy -P standalone'
+        sh 'mvn deploy -P standalone'
       }
     }
     stage('Deploy ARM') { 
