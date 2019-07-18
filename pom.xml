@@ -12,7 +12,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<mule.version>3.8.3</mule.version>
-        <ojdbc.version>11.2.0</ojdbc.version>
     	<mule.tools.version>1.7</mule.tools.version>
 	</properties>
 
@@ -227,11 +226,7 @@
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
-      <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>${ojdbc.version}</version>
-        </dependency>
+      
     </dependencies>
 
 	<repositories>
