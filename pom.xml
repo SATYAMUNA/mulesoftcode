@@ -71,7 +71,7 @@
 					<password>MYnoki@523@</password>
 					<target>proxy-cluster</target>
 					<targetType>cluster</targetType>
-					<environment>SANDBOX</environment>
+					<environment>Sandbox</environment>
 				</configuration>
 				<executions>
 					<execution>
