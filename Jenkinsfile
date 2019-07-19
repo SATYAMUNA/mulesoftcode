@@ -13,7 +13,7 @@ pipeline {
       }
       steps {
                 echo 'Performance testing...'
-              	sh 'mvn -Dmaven.repo.local="~/.m2/repository" verify'
+              	bat 'mvn -Dmaven.repo.local="~/.m2/repository" verify'
               	archiveArtifacts(artifacts: '**/*.jtl', onlyIfSuccessful: true, fingerprint: true)
               	perfReport '**/*.jtl'
             }
