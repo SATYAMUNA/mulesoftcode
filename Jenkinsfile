@@ -7,14 +7,16 @@ pipeline {
 
             }
         }
-    stage('Deploy ARM') { 
+    stage('Performance Test') { 
       environment {
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials') 
       }
       steps {
-        //bat 'mvn deploy -P arm -Darm.target.name=proxy-cluster -Danypoint.username=MULEDOCKER  -Danypoint.password=MYnoki@523@' 
-	      bat 'mvn -Dmaven.repo.local="~/.m2/repository" package mule:deploy'
-      }
+                echo 'Performance testing...'
+              	sh 'mvn -Dmaven.repo.local="~/.m2/repository" verify'
+              	archiveArtifacts(artifacts: '**/*.jtl', onlyIfSuccessful: true, fingerprint: true)
+              	perfReport '**/*.jtl'
+            }
     }
     
   }
