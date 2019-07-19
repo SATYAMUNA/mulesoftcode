@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-    	label 'docker-mule'
-    }
+    
     stages {
       	stage('Checkout') {
             steps {
