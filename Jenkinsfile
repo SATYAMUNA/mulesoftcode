@@ -12,7 +12,8 @@ pipeline {
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials') 
       }
       steps {
-        bat 'mvn deploy -P arm -Darm.target.name=proxy-cluster -Danypoint.username=MULEDOCKER  -Danypoint.password=MYnoki@523@' 
+        //bat 'mvn deploy -P arm -Darm.target.name=proxy-cluster -Danypoint.username=MULEDOCKER  -Danypoint.password=MYnoki@523@' 
+	      sh 'mvn -Dmaven.repo.local="~/.m2/repository" package mule:deploy'
       }
     }
     stage('Deploy CloudHub') { 
